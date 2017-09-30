@@ -30,55 +30,68 @@
 \newcommand{\projects}[1]{\newcommand{\getprojects}{#1}}
 \newcommand{\skills}[1]{\newcommand{\getskills}{#1}}
 
-\newcommand{\contact}[1]{\newcommand{\getcontact}{\
-    \begin{description}
-        \item Address: \getaddress{}
-        \item Website: \gethomepage{}
-        \item Email: \getemail{}
-        \item Phone: \getphone{}
-    \end{description}
-}}
-
 
 % define headline -------------------------------------------------------------
-\newcommand{\headline}{\
-    \hfill{\large\getemail}
+\newcommand{\headline}{{}
+    \ifdefined\getemail{}
+        % if phone is not defined, display email after name
+        \ifdefined\getphone{\hfill{\large\getemail}}\fi
+    \fi
 
-    {\sc\LARGE\getname}
-    \hfill\getphone\
+    \ifdefined\getname{}
+        {\sc\LARGE\getname}
+    \else
+        {\sc\LARGE NAME OF THE PERSON}
+    \fi
+    \ifdefined\getphone{}
+        \hfill\getphone{}
+    \else
+        % display email as promised
+        \ifdefined\getemail{\hfill{\large\getemail}}\fi
+    \fi
 
-    \hrulefill\
+    \hrulefill{}
 
-    \gettagline\
+    \ifdefined\gettagline{\gettagline}\fi
     \newline
 }
 
 
 % arrange in the layout -------------------------------------------------------
-\newcommand{\render}{\
+\newcommand{\render}{{}
 \noindent
-    \headline\
+    \headline{}
 
-    \section{\large\bf About Me}
-    \getaboutme\
+    \ifdefined\getaboutme{}
+        \section{\large\bf About Me}
+        \getaboutme{}
+    \fi
 
-    \section{\large\bf Education}
-    \geteducation\
+    \ifdefined\geteducation{}
+        \section{\large\bf Education}
+        \geteducation{}
+    \fi
 
-    \section{\large\bf Experience}
-    \getexperience\
+    \ifdefined\getexperience{}
+        \section{\large\bf Experience}
+        \getexperience{}
+    \fi
 
-    \section{\large\bf Projects}
-    \getprojects\
+    \ifdefined\getprojects{}
+        \section{\large\bf Projects}
+        \getprojects{}
+    \fi
 
-    \section{\large\bf Skills}
-    \getskills\
+    \ifdefined\getskills{}
+        \section{\large\bf Skills}
+        \getskills{}
+    \fi
 
     \section{\large\bf Contact}
-    {\bf Address:} \getaddress\\
-    {\bf Website:} \gethomepage\\
-    {\bf Email:} \getemail\\
-    {\bf Phone:} \getphone\\
+    \ifdefined\getaddress{\bf Address:} \getaddress\\\fi
+    \ifdefined\gethomepage{\bf Website:} \gethomepage\\\fi
+    \ifdefined\getemail{\bf Email:} \getemail\\\fi
+    \ifdefined\getphone{\bf Phone:} \getphone\\\fi
 }
 
 \endinput
