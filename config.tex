@@ -1,26 +1,23 @@
 \documentclass[12pt, letterpaper, titlepage]{article}
 
-% set theme
+% Set theme
 \usepackage{themes/simple}
 
-
 \begin{document}
-\setstyle{}
 
 % Basic
-\name{Utkarsh}{Maheshwari}
-%\address{I-261, Delta-2, Greater Noida, Uttar Pradesh, India-201310}
-%\mobile{(+91) 7745054523}
+\name{John}{Doe}
+\address{4/5, Awesome Lane, Quiet Town, Peaceful Country}
+\email{johndoe@example.com}
+\phone{(+91) 9876543210}
 
-%% Social media
-%\email{utkarshMe96@gmail.com}
-%\homepage{www.UtkarshMe.github.io}
-%\github{utkarshMe}
-%\linkedin{utkarshMe96}
-%\reddit{UtkarshMe96}
+% Social media
+\homepage{utkarshme.github.io}
+\github{UtkarshMe}
+\linkedin{UtkarshMe96}
 
 %% Decoration
-%\tagline{``Code: Reduce, Reuse''} %TODO: Use a better quote. please.
+\tagline{``Making an awesome Resume template is what I always wanted!''}
 
 \aboutme{\input{sections/aboutme.tex}}
 \education{\input{sections/education.tex}}
@@ -28,5 +25,8 @@
 \projects{\input{sections/projects.tex}}
 \skills{\input{sections/skills.tex}}
 \contact{\input{sections/contact.tex}}
+
+% Render the document
+\render{}
 
 \end{document}
