@@ -1,0 +1,25 @@
+\ProvidesPackage{util} 
+
+\newcommand{\name}[2]{\
+    \newcommand{\getfirstname}{#1}
+    \newcommand{\getsecondname}{#2}
+    \newcommand{\getname}{#1 #2}
+}
+\newcommand{\address}[1]{\newcommand{\getaddress}{#1}}
+\newcommand{\email}[1]{\newcommand{\getemail}{#1}}
+\newcommand{\phone}[1]{\newcommand{\getphone}{#1}}
+
+\newcommand{\homepage}[1]{\newcommand{\gethomepage}{https://#1}}
+\newcommand{\github}[1]{\newcommand{\getgithub}{https://github.com/#1}}
+\newcommand{\linkedin}[1]{\newcommand{\getlinkin}{https://linkedin.com/in/#1}}
+\newcommand{\twitter}[1]{\newcommand{\gettwitter}{https://twitter.com/#1}}
+
+\newcommand{\tagline}[1]{\newcommand{\gettagline}{#1}}
+
+\newcommand{\aboutme}[1]{\newcommand{\getaboutme}{#1}}
+\newcommand{\education}[1]{\newcommand{\geteducation}{#1}}
+\newcommand{\experience}[1]{\newcommand{\getexperience}{#1}}
+\newcommand{\projects}[1]{\newcommand{\getprojects}{#1}}
+\newcommand{\skills}[1]{\newcommand{\getskills}{#1}}
+
+\endinput
