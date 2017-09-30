@@ -1,9 +1,7 @@
-all: config resume
+all: config
 
 pdf: all
-	pdflatex resume.tex
+	pdflatex config.tex
 
-config: config.sty
-
-resume: resume.tex
-	latex resume.tex
+config: config.tex
+	latex config.tex

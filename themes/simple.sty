@@ -1,11 +1,57 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{themes/simple} 
 
-\newcommand{\aboutme}{}
-\newcommand{\education}{}
-\newcommand{\experience}{}
-\newcommand{\projects}{}
-\newcommand{\skills}{}
-\newcommand{\contact}{}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, left=3cm, right=3cm, top=2cm, bottom=2cm]{geometry}
+
+
+% define styling
+\newcommand{\setstyle} {}
+
+
+\newcommand{\name}[2] {\
+    {\centering {\scshape\LARGE \par #1 #2 \par}}
+}
+
+% about section
+\newcommand{\aboutme}[1] {\
+    \section{About Me}
+    #1
+}
+
+% education section
+\newcommand{\education}[1]
+{\
+    \section{Education}
+    #1
+}
+
+% experience section
+\newcommand{\experience}[1]
+{\
+    \section{Experince}
+    #1
+}
+
+% projects section
+\newcommand{\projects}[1]
+{\
+    \section{Projects}
+    #1
+}
+
+% skills section
+\newcommand{\skills}[1]
+{\
+    \section{Skills}
+    #1
+}
+
+% contact section
+\newcommand{\contact}[1]
+{\
+    \section{Contact}
+    #1
+}
 
 \endinput
