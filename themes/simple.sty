@@ -28,7 +28,15 @@
 \newcommand{\experience}[1]{\newcommand{\getexperience}{#1}}
 \newcommand{\projects}[1]{\newcommand{\getprojects}{#1}}
 \newcommand{\skills}[1]{\newcommand{\getskills}{#1}}
-\newcommand{\contact}[1]{\newcommand{\getcontact}{#1}}
+
+\newcommand{\contact}[1]{\newcommand{\getcontact}{\
+    \begin{description}
+        \item Address: \getaddress{}
+        \item Website: \gethomepage{}
+        \item Email: \getemail{}
+        \item Phone: \getphone{}
+    \end{description}
+}}
 
 
 % define headline -------------------------------------------------------------
@@ -49,7 +57,6 @@
 
     \section{\large\bf About Me}
     \getaboutme\
-    \newline
 
     \section{\large\bf Education}
     \geteducation\
@@ -64,7 +71,16 @@
     \getskills\
 
     \section{\large\bf Contact}
-    \getcontact\
+    %\begin{itemize}
+        %\item Address: \getaddress{}
+        %\item Website: \gethomepage{}
+        %\item Email: \getemail{}
+        %\item Phone: \getphone{}
+    %\end{itemize}
+    {\bf Address:} \getaddress\\
+    {\bf Website:} \gethomepage\\
+    {\bf Email:} \getemail\\
+    {\bf Phone:} \getphone\\
 }
 
 \endinput
