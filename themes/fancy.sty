@@ -5,6 +5,9 @@
 \usepackage[T1]{fontenc}
 \usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
 
+% import the util commands
+\usepackage{util}
+
 % define colors
 \usepackage{xcolor}
 \definecolor{basecolor}{RGB}{0,0,0}
@@ -12,15 +15,12 @@
 \definecolor{accentcolor}{RGB}{192,244,77}
 \definecolor{backgroundcolor}{RGB}{240,240,240}
 
-% import the util commands
-\usepackage{util}
-
 % disable indents
 \setlength\parindent{0pt}
 % disable page numbers
 \pagenumbering{gobble}
 
-
+% define separator
 \newcommand{\separator}{\space\textbullet\space}
 
 
@@ -39,6 +39,9 @@
             \ifdefined\getaddress\getaddress\separator\fi
             \ifdefined\getemail\getemail\separator\fi
             \ifdefined\getphone\getphone\fi
+            \ifdefined\gethomepage\separator\gethomepage\fi
+            \ifdefined\getgithub\separator\getgithub\fi
+            \ifdefined\getlinkedin\separator\getlinkedin\fi
         }
     \end{center}
 }
@@ -65,6 +68,12 @@
     \ifdefined\getaboutme\mysection{About Me}\noindent\getaboutme\fi%
     % education section
     \ifdefined\geteducation\mysection{Education}\noindent\geteducation\fi%
+    % experience section
+    \ifdefined\getexperience\mysection{Experience}\noindent\getexperience\fi%
+    % projects section
+    \ifdefined\getprojects\mysection{Projects}\noindent\getprojects\fi%
+    % skills section
+    \ifdefined\getskills\mysection{Skills}\getskills\fi%
 }
 
 
