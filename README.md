@@ -1,6 +1,9 @@
 # ResumeLaTeX
 *It's all about the TeX*
 
+## Themes
+Find sample themes in `samples`
+
 ## How to
 Configure the variables in config.tex and punch in these commands in the
 terminal:
