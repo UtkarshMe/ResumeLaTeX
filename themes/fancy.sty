@@ -47,7 +47,8 @@
 
 % define mysection ------------------------------------------------------------
 \newcommand{\mysection}[1]{%
-    \vspace{5mm}{\sc\large{#1}}\newline
+    \hfill\break\hfill\break%
+    {\sc\large{#1}}\newline
     {\color{accentcolor}\rule[2.5mm]{\linewidth}{0.2mm}}
 }
 
@@ -62,6 +63,8 @@
     \headline%
     % about me section
     \ifdefined\getaboutme\mysection{About Me}\noindent\getaboutme\fi%
+    % education section
+    \ifdefined\geteducation\mysection{Education}\noindent\geteducation\fi%
 }
 
 
