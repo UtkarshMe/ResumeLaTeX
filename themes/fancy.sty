@@ -1,0 +1,58 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{themes/fancy} 
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[a4paper, left=2cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+% define colors
+\usepackage{xcolor}
+\definecolor{basecolor}{RGB}{0,0,0}
+\definecolor{base2color}{RGB}{100,100,100}
+\definecolor{accentcolor}{RGB}{192,244,77}
+\definecolor{backgroundcolor}{RGB}{240,240,240}
+
+% import the util commands
+\usepackage{util}
+
+% disable indents
+\setlength\parindent{0pt}
+% disable page numbers
+\pagenumbering{gobble}
+
+
+\newcommand{\separator}{\space\textbullet\space}
+
+
+% define headline -------------------------------------------------------------
+\newcommand{\headline}{%
+    \begin{center}
+        % the name
+        {\color{base2color}\sc\Huge
+            \ifdefined\getfirstname{\getfirstname}\else{john}\fi}
+        {\color{basecolor}\sc\Huge
+            \ifdefined\getlastname{\getlastname}\else{doe}\fi}
+        % the horizontal rule
+        {\color{accentcolor}\rule{\linewidth}{0.5mm}\newline}
+        % the address, email, phone
+        {\color{basecolor}\sc
+            \ifdefined\getaddress\getaddress\separator\fi
+            \ifdefined\getemail\getemail\separator\fi
+            \ifdefined\getphone\getphone\fi
+        }
+    \end{center}
+}
+
+
+% arrange in the layout -------------------------------------------------------
+\newcommand{\render}{%
+    % set the page color
+    \pagecolor{backgroundcolor}
+    % the top wide line
+    {\color{accentcolor}\rule{\linewidth}{7mm}}
+    % the headline
+    \headline%
+}
+
+
+\endinput
