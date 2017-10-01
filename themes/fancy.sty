@@ -33,14 +33,22 @@
         {\color{basecolor}\sc\Huge
             \ifdefined\getlastname{\getlastname}\else{doe}\fi}
         % the horizontal rule
-        {\color{accentcolor}\rule{\linewidth}{0.5mm}\newline}
+        {\color{accentcolor}\rule[1mm]{\linewidth}{0.2mm}\newline}
         % the address, email, phone
-        {\color{basecolor}\sc
+        {\color{basecolor}
             \ifdefined\getaddress\getaddress\separator\fi
             \ifdefined\getemail\getemail\separator\fi
             \ifdefined\getphone\getphone\fi
         }
     \end{center}
+}
+
+
+
+% define mysection ------------------------------------------------------------
+\newcommand{\mysection}[1]{%
+    \vspace{5mm}{\sc\large{#1}}\newline
+    {\color{accentcolor}\rule[2.5mm]{\linewidth}{0.2mm}}
 }
 
 
@@ -52,6 +60,8 @@
     {\color{accentcolor}\rule{\linewidth}{7mm}}
     % the headline
     \headline%
+    % about me section
+    \ifdefined\getaboutme\mysection{About Me}\noindent\getaboutme\fi%
 }
 
 
