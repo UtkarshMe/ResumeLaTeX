@@ -10,7 +10,9 @@ terminal:
 
 ```bash
 make #to just compile
-make pdf #to generate resume named: config.pdf
+make pdf #to generate pdf
+make html #to generate html
+make all #to generate all
 ```
 
 ## Author
